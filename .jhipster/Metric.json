@@ -1,0 +1,44 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "emtry",
+            "otherEntityName": "y",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "metric"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "goal",
+            "otherEntityName": "goal",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "metric"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "2"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "amount",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160222222545",
+    "dto": "no",
+    "service": "no",
+    "pagination": "pagination"
+}
