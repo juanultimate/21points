@@ -29,20 +29,20 @@ public class Metric implements Serializable {
     @Size(min = 2)
     @Column(name = "name", nullable = false)
     private String name;
-    
+
     @NotNull
     @Column(name = "amount", nullable = false)
     private String amount;
-    
-    @ManyToMany(mappedBy = "metrics")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Y> emtrys = new HashSet<>();
 
     @ManyToMany(mappedBy = "metrics")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Goal> goals = new HashSet<>();
+    private Set<Entry> emtrys = new HashSet<Entry>();
+
+    @ManyToMany(mappedBy = "metrics")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Goal> goals = new HashSet<Goal>();
 
     public Long getId() {
         return id;
@@ -55,7 +55,7 @@ public class Metric implements Serializable {
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -63,16 +63,16 @@ public class Metric implements Serializable {
     public String getAmount() {
         return amount;
     }
-    
+
     public void setAmount(String amount) {
         this.amount = amount;
     }
 
-    public Set<Y> getEmtrys() {
+    public Set<Entry> getEmtrys() {
         return emtrys;
     }
 
-    public void setEmtrys(Set<Y> ys) {
+    public void setEmtrys(Set<Entry> ys) {
         this.emtrys = ys;
     }
 
